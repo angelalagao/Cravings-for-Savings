@@ -1,0 +1,77 @@
+.singleRecipeBackground {
+	display: flex;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	background-color: rgba($secondaryGrey, 0.6);
+	// background-color: rgba(51,51,51,0.4);	
+}
+
+.singleRecipeContainer {
+	padding: 40px;
+	border-radius: 10px;
+	width: 60%;
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba($backgroundColor, 0.8);
+	position: relative;
+	img {
+		max-width: 100%;
+	}
+	h2, h3 {
+		font-family: 'Satisfy', cursive;
+		text-align: center;
+		margin: 0;
+	}
+}
+
+.singleRecipeFlex {
+	display: flex;
+}
+
+.singleRecipeImage, .ingredientContainer {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.closeButton {
+	position: absolute;
+	top: 2px;
+	right: 2px;
+	width: 25px;
+	height: 25px;
+}
+
+// /* Portrait tablet and small desktops */
+@media (max-width: 940px) {
+	.singleRecipeContainer {
+		width: 80%;
+	}
+}
+
+// /* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+	.singleRecipeFlex {
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	.singleRecipeImage, .ingredientContainer {
+		width: 100%;
+	}
+	.singleRecipeContainer {
+		margin: 20px auto;
+	}
+}
+
+// /* Landscape phones and down */
+@media (max-width: 480px) {
+
+}

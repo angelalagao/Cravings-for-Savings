@@ -1,0 +1,86 @@
+@import 'partials/setup';
+@import 'partials/variables';
+@import 'partials/header';
+@import 'partials/button';
+@import 'partials/form';
+@import 'partials/recipes';
+@import 'partials/singleRecipe';
+
+
+
+// * {
+// 	border: 1px solid red;
+// }
+html {
+	font-size: 62.5%;
+}
+
+body {
+	background: url('../assets/kitchen-bground.jpg') no-repeat center;
+	background-size: cover;
+	font-size: 1.4rem;
+	letter-spacing: 1.2px;
+	font-family: 'Raleway', sans-serif;
+	color: $secondaryGrey;
+	position: relative;
+}
+
+.overlay {
+	background: linear-gradient(to bottom, rgba($backgroundColor, 0.4), rgba($backgroundColor, 0.5), rgba($backgroundColor, 0.1));
+	min-height: 100vh;
+}
+
+h1 {
+	font-family: 'Satisfy', cursive;
+	font-size: 3.6rem;
+	margin: 0;
+	.specialCase {
+		color: $primaryRed;
+		font-size: 5.2rem;
+	}
+}
+
+h2 {
+	text-align: center;
+}
+
+a {
+	text-decoration: none;
+	color: $secondaryGrey;
+		transition: all 0.5s;
+	&:visited {
+		color: $secondaryGrey;
+	}
+	&:hover {
+		text-decoration: underline;
+		color: $primaryRed;
+	}
+}
+
+.wrapper {
+	max-width: 1080px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+}
+
+footer {
+	display: flex;
+	margin: 5px;
+	p {
+		margin: auto;
+	}
+	.myName {
+		color: $primaryRed;
+	}
+}
+
+
+
+
+
+
+
+

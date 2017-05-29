@@ -1,0 +1,34 @@
+.navigation {
+	background: linear-gradient(to bottom, rgba($backgroundColor, 0.4), rgba($backgroundColor, 0.5), rgba($backgroundColor, 0.1));
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 20px;
+}
+
+.navLogo {
+	display: flex;
+	align-items: center;
+	transition: all 0.5s;
+	// icon
+	svg {
+		width: 50px;
+		height: 50px;
+	}
+	h2 {
+		font-family: 'Satisfy', cursive;
+	}
+}
+
+.navList {
+	list-style: none;
+	padding: 0;
+	display: flex;
+	li {
+		padding: 5px;
+	}
+}
+
+header {
+	text-align: center;
+}
