@@ -16,7 +16,7 @@ foodApp.getUserData = function() {
 		let userFood = $('input[name="food"]').val();
 		foodApp.userIngredients = $('input[name="ingredients"]').val().split(',');
 		foodApp.userIngredients = foodApp.userIngredients.map(function(item) {
-			return item.trim();
+			return item.toLowerCase().trim();
 		});
 		foodApp.getRecipes(userFood);
 	});
