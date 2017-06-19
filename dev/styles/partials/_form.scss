@@ -7,7 +7,7 @@
 
 	input {
 		background: rgba($backgroundColor, 0.9);
-		border: 1px solid rgba($secondaryGrey, 0.4);
+		border: 2px solid $secondaryGrey;
 		border-radius: 2px;
 		outline-color: $primaryRed;
 		color: $secondaryGrey;
@@ -21,7 +21,7 @@
 	button {
 		width: 30%;
 		min-height: 40px;
-		margin: auto;
+		margin: 10px auto;
 	}
 }
 
