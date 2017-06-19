@@ -1,9 +1,9 @@
 button {
 	// font-family: 'Satisfy', cursive;
 	letter-spacing: 1.2px;
-	color: $secondaryGrey;
+	color: $backgroundColor;
 	padding: 10px;
-	background: rgba($primaryRed, 0.4);
+	background: rgba($primaryRed, 0.9);
 	border: 1px solid rgba($secondaryGrey, 0.4);
 	border-radius: 2px;
 	outline-color: $secondaryGrey;
@@ -11,7 +11,7 @@ button {
 	position: relative;
 	&:after {
 		content: '';
-		background: rgba($backgroundColor, 0.5);
+		background: rgba($primaryRed, 0.4);
 		position: absolute;
 		left: 0;
 		top: 0;
@@ -21,7 +21,7 @@ button {
 		transition: all 0.3s;
 	}
 	&:hover {
-		color: $primaryRed;
+		color: $secondaryGrey;
 		&:after {
 			width: 100%;
 		}

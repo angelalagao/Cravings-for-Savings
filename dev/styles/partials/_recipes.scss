@@ -1,16 +1,21 @@
 .recipesContainer {
+	margin-top: 25px;
 	width: 100%;
 	display:flex;
 	justify-content: center;
 	flex-wrap: wrap;
+	.loading {
+		font-size: 3rem;
+		color: $backgroundColor;
+	}
 }
 
 .recipeMatch {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	width: calc(30% - 20px);
-	margin: 10px;
+	width: calc(30% - 40px);
+	margin: 20px;
 	transition: all 0.5s;
 }
 
@@ -26,7 +31,7 @@
 }
 
 .infoBox {
-	background-color: rgba($backgroundColor, 0.4);
+	background-color: rgba($backgroundColor, 0.8);
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -43,7 +48,7 @@
 // /* Landscape phone to portrait tablet */
 @media (max-width: 768px) {
 	.recipeMatch {
-		width: calc(50% - 20px);
+		width: calc(50% - 40px);
 	}
 }
 
@@ -51,6 +56,6 @@
 @media (max-width: 480px) {
 	.recipeMatch {
 		flex-direction: row;
-		width: calc(100% - 20px);
+		width: calc(100% - 40px);
 	}
 }

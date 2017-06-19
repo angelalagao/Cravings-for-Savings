@@ -12,6 +12,7 @@ foodApp.init = function() {
 foodApp.getUserData = function() {
 	$('.userInputs').on('submit', (e) => {
 		e.preventDefault();
+		$('.recipesContainer').append('<p class="loading">Loading...</p>');
 		let userFood = $('input[name="food"]').val();
 		foodApp.userIngredients = $('input[name="ingredients"]').val().split(',');
 		foodApp.userIngredients = foodApp.userIngredients.map(function(item) {
@@ -56,17 +57,15 @@ foodApp.filterRecipes = function(recipeMatches) {
 	.sort((prev, curr) => {
 		return prev.difference - curr.difference
 	});
+	$('.recipesContainer').html('');
 	foodApp.displayRecipes(relevantRecipeMatches);
 };
 
 // take each filtered recipes and display on page
 foodApp.displayRecipes = function(filteredRecipes) {
-
-	console.log(filteredRecipes);
 	$('.recipesContainer').empty();
 	$('.grid-item').remove();
 	filteredRecipes.forEach((filteredRecipe) => {
-		console.log(filteredRecipe);
 		const imageUrl = filteredRecipe.recipe.smallImageUrls[0].replace('=s90', '');
 		const recipeMatch = $('<div>').addClass('recipeMatch'); // for packery
 		const recipeImage = $('<div>')
@@ -88,10 +87,8 @@ foodApp.displayRecipes = function(filteredRecipes) {
 	});
 
 	if (filteredRecipes.length === 0) {
-		console.log('sorry')
 		const noMatches = $('<h2>').text('Sorry no matches!');
 		$('.recipesContainer').append(noMatches);
-		// enter zomato api
 	}
 };
 
@@ -100,9 +97,11 @@ foodApp.events = function() {
 	$('.recipesContainer').on('click tap', 'button', function() {
 		const clickedRecipe = $(this).data();
 		foodApp.getRecipeData(clickedRecipe.id);
+		$('body').addClass('modalOpen');
 	});
 	$('.recipesContainer').on('click tap', '.closeButton', function() {
 	        $('.singleRecipeBackground').remove();
+	        $('body').removeClass('modalOpen');
 	});
 };
 
@@ -123,7 +122,6 @@ foodApp.getRecipeData = function(recipeId) {
 
 // show the yummly recipe page ON SAME PAGE
 foodApp.displaySingleRecipe = function(recipe) {
-	console.log(recipe)
 	const singleRecipeBackground = $('<div>').addClass('singleRecipeBackground');
 	const singleRecipeContainer = $('<div>').addClass('singleRecipeContainer');
 	const singleRecipeFlex = $('<div>').addClass('singleRecipeFlex');
@@ -143,7 +141,6 @@ foodApp.displaySingleRecipe = function(recipe) {
 		const singleIngredient = $('<li>').text(ingredient);
 		ingredientLine.append(singleIngredient);
 	});
-	console.log(recipe.source.sourceRecipeUrl);
 	const recipeSource = $('<a>').attr('href', recipe.source.sourceRecipeUrl)
 									.attr('target', '_blank')
 									.text('Go to source');
